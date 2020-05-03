@@ -37,7 +37,6 @@ class Slider {
     this.arrowRight.addEventListener("click", this.nextSlide);
 
 
-    /////////////Back
     this.backSlide = () => {
         console.log(this.backSlide)
     this.arrowLeft.classList.remove("deactive");
@@ -59,6 +58,16 @@ class Slider {
 }
 
 this.arrowLeft.addEventListener("click", this.backSlide);
+
+    document.addEventListener("keydown", (e) => {
+       console.log(e.keyCode)
+       if(e.keyCode === 39) {
+           this.nextSlide()
+       } 
+       if(e.keyCode === 37) {
+           this.backSlide()
+       }
+})
 }
     
 }
